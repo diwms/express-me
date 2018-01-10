@@ -1,3 +1,6 @@
+#IDE ignore
+.idea
+
 # Composer files
 composer.phar
 vendor/
@@ -18,7 +21,6 @@ temp/
 #Doctrine 2
 data/DoctrineORMModule/Proxy/
 data/DoctrineORMModule/cache/
-
 
 # Legacy ZF1
 demos/
