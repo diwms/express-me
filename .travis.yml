@@ -14,9 +14,6 @@ env:
 php:
  - '7.2'
 
-before_install:
-  - phpenv config-rm xdebug.ini || return 0
-
 install:
   - travis_retry composer install $COMPOSER_ARGS --ignore-platform-reqs
   - travis_retry composer require --dev $COMPOSER_ARGS $COVERAGE_DEPS
