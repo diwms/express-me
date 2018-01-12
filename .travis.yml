@@ -23,7 +23,7 @@ script:
   - phpunit --colors=always --coverage-clover clover.xml
 
 after_script:
-  - travis_retry php vendor/bin/coveralls -v
+  - travis_retry coveralls -v
 
 notifications:
   email: false
