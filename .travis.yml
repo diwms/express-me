@@ -23,10 +23,10 @@ install:
   - stty cols 120 && composer show
 
 script:
-  - composer test-coverage
+  - phpunit --colors=always --coverage-clover clover.xml
 
 after_script:
-  - travis_retry composer upload-coverage
+  - travis_retry php vendor/bin/coveralls -v
 
 notifications:
   email: false

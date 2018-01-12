@@ -8,10 +8,5 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^6.5"
-  },
-  "scripts": {
-    "test": "phpunit --colors=always",
-    "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
-    "upload-coverage": "coveralls -v"
   }
 }
