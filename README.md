@@ -8,7 +8,7 @@
   </a> 
   
   <a href="https://coveralls.io/github/diwms/express-me?branch=master">
-      <img src="https:https://img.shields.io/coveralls/github/diwms/express-me.svg?style=flat-square" alt="Coveralls" />
+      <img src="https://img.shields.io/coveralls/github/diwms/express-me/master.svg?style=flat-square" alt="Coveralls" />
   </a> 
 
   <a href="https://styleci.io/repos/115021665">
