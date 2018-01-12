@@ -7,10 +7,9 @@ namespace ExpressMeTest;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class Dummy
- * @package AppTest
+ * Class Dummy.
  */
-class Dummy extends TestCase
+class Test extends TestCase
 {
     public function testDummy(): void
     {
