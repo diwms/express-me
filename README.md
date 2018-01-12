@@ -7,6 +7,10 @@
       <img src="https://img.shields.io/travis/diwms/express-me.svg?style=flat-square" alt="Travis" />
   </a> 
   
+  <a href="https://coveralls.io/github/diwms/express-me?branch=master">
+      <img src="https:https://img.shields.io/coveralls/github/diwms/express-me.svg?style=flat-square" alt="Coveralls" />
+  </a> 
+
   <a href="https://styleci.io/repos/115021665">
     <img src="https://styleci.io/repos/115021665/shield" alt="StyleCI" />
   </a>

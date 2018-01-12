@@ -9,10 +9,24 @@ cache:
 env:
   global:
     - COMPOSER_ARGS="--no-interaction"
+    - COVERAGE_DEPS="satooshi/php-coveralls"
 
 php:
  - '7.2'
 
+before_install:
+  - phpenv config-rm xdebug.ini || return 0
+
 install:
   - travis_retry composer install $COMPOSER_ARGS --ignore-platform-reqs
-  - travis_retry composer require --dev $COMPOSER_ARGS
+  - travis_retry composer require --dev $COMPOSER_ARGS $COVERAGE_DEPS
+  - stty cols 120 && composer show
+
+script:
+  - composer test-coverage
+
+after_script:
+  - travis_retry composer upload-coverage
+
+notifications:
+  email: false
