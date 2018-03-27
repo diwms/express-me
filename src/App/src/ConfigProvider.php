@@ -10,15 +10,20 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'templates' => $this->getTemplates(),
+            'templates'    => $this->getTemplates(),
         ];
     }
 
     public function getDependencies(): array
     {
         return [
-            'invokables' => [Http\Handler\DummyHandler::class],
-            'factories' => [],
+            'invokables' => [
+                Http\Handler\DummyHandler::class
+            ],
+            'factories'  => [
+                Http\Handler\HomePageHandler::class => Http\Handler\Factory\HomePageHandlerFactory::class,
+                Http\Handler\PostPageHandler::class => Http\Handler\Factory\PostPageHandlerFactory::class,
+            ],
         ];
     }
 
@@ -26,8 +31,10 @@ class ConfigProvider
     {
         return [
             'paths' => [
-                'error' => [__DIR__.'/../templates/error'],
-                'layout' => [__DIR__.'/../templates/layout'],
+                'app'     => [__DIR__ . '/../templates/app'],
+                'error'   => [__DIR__ . '/../templates/error'],
+                'layout'  => [__DIR__ . '/../templates/layout'],
+                'partial' => [__DIR__ . '/../templates/partial'],
             ],
         ];
     }

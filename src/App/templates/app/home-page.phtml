@@ -1,0 +1,34 @@
+<?php $this->headTitle('Home'); ?>
+<style>
+    .post-preview > a {
+        color: #212529;
+    }
+
+    .post-preview > a:focus, .post-preview > a:hover {
+        text-decoration: none;
+        color: #0085A1;
+    }
+
+    .post-preview > a > .post-title {
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <?php foreach ($posts as $post) : ?>
+                <div class="post-preview">
+                    <a href="/post/<?php echo $post->getSlug(); ?>">
+                        <h2 class="post-title"><?php echo $post->getTitle(); ?></h2>
+                    </a>
+                </div>
+                <hr>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
+<?php echo $this->paginationControl($posts, 'Sliding', 'partial::paginator'); ?>
