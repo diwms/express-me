@@ -16,9 +16,10 @@ class ConfigProvider
 
     public function getDependencies(): array
     {
-        return ['invokables'=>[Http\Handler\DummyHandler::class],'factories' => [
-
-        ]];
+        return [
+            'invokables' => [Http\Handler\DummyHandler::class],
+            'factories'  => [],
+        ];
     }
 
     public function getTemplates(): array
