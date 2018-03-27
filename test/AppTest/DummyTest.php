@@ -2,14 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ExpressMeTest;
+namespace App;
 
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class Dummy.
- */
-class Test extends TestCase
+class DummyTest extends TestCase
 {
     public function testDummy(): void
     {
