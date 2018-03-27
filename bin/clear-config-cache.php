@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$config = include __DIR__ . '/../config/config.php';
+$config = require_once __DIR__ . '/../config/config.php';
 
 if (!isset($config['config_cache_path'])) {
     echo 'No configuration cache path found' . PHP_EOL;
