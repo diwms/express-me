@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Config;
@@ -6,7 +7,6 @@ namespace App\Config;
 use App\Delegator\Pipeline;
 use App\Delegator\Routes;
 use App\View\BladeRendererFactory;
-use App\View\BladeViewFactory;
 use Zend\Expressive\Application;
 use Zend\Expressive\Container\ApplicationFactory;
 use Zend\Expressive\Container\ErrorHandlerFactory;

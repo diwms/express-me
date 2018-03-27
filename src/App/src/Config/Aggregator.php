@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Config;
@@ -11,9 +12,9 @@ class Aggregator
 {
     public function getMergedConfig(): array
     {
-        $applicationConfig  = ConfigProvider::class;
+        $applicationConfig = ConfigProvider::class;
         $globalDependencies = new ArrayProvider(Dependency::$config);
-        $globalExpressive   = new ArrayProvider(Expressive::$config);
+        $globalExpressive = new ArrayProvider(Expressive::$config);
 
         $aggregator = new ConfigAggregator([$applicationConfig, $globalDependencies, $globalExpressive]);
 

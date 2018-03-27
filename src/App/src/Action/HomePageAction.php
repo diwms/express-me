@@ -20,13 +20,14 @@ class HomePageAction implements MiddlewareInterface
 
     public function __construct(Router\RouterInterface $router, Template\TemplateRendererInterface $template = null)
     {
-        $this->router   = $router;
+        $this->router = $router;
         $this->template = $template;
     }
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $data['routerName'] = 'FastRoute';
+
         return new HtmlResponse($this->template->render('app::home', $data));
     }
 }

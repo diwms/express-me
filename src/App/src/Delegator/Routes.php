@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Delegator;
@@ -9,8 +10,7 @@ use Zend\Expressive\Application;
 
 /**
  * Class Routes.
- * Perform application routes setup
- * @package App\Delegator
+ * Perform application routes setup.
  */
 class Routes
 {

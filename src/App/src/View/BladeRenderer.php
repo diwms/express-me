@@ -8,7 +8,7 @@ use Zend\Expressive\Template\TemplatePath;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
 /**
- * Template implementation bridging illuminate/view
+ * Template implementation bridging illuminate/view.
  */
 class BladeRenderer implements TemplateRendererInterface
 {
@@ -22,7 +22,7 @@ class BladeRenderer implements TemplateRendererInterface
     }
 
     /**
-     * Render
+     * Render.
      *
      * @param string       $name
      * @param array|object $params
@@ -66,8 +66,7 @@ class BladeRenderer implements TemplateRendererInterface
     }
 
     /**
-     *
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addDefaultParam(string $templateName, string $param, $value): void
     {

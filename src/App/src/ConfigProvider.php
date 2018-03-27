@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App;
@@ -11,13 +12,13 @@ class ConfigProvider
     public function __invoke()
     {
         return [
-            'config' => $this->getDependencies(),
+            'config'       => $this->getDependencies(),
             'templates'    => $this->getTemplates(),
         ];
     }
 
     /**
-     * Returns the container config
+     * Returns the container config.
      */
     public function getDependencies(): array
     {
@@ -31,9 +32,9 @@ class ConfigProvider
     public function getTemplates(): array
     {
         return [
-            'cache' => __DIR__ . '/../../../data/cache',
+            'cache' => __DIR__.'/../../../data/cache',
             'paths' => [
-                'app' => __DIR__ . '/../templates/app',
+                'app' => __DIR__.'/../templates/app',
             ],
         ];
     }

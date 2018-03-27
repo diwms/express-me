@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\View;
@@ -45,7 +46,7 @@ class BladeViewFactory
             return new PhpEngine();
         });
 
-        $finder     = $this->getViewFinder($container);
+        $finder = $this->getViewFinder($container);
         $dispatcher = $this->getEventDispatcher($container);
 
         return new ViewFactory($viewResolver, $finder, $dispatcher);
@@ -57,7 +58,7 @@ class BladeViewFactory
             return $container->get(ViewFinderInterface::class);
         }
 
-        return new FileViewFinder(new Filesystem, []);
+        return new FileViewFinder(new Filesystem(), []);
     }
 
     protected function getEventDispatcher($container)

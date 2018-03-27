@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\View;
@@ -14,9 +15,10 @@ class BladeRendererFactory
     /**
      * @param ContainerInterface $sm
      *
-     * @return BladeRenderer
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
+     *
+     * @return BladeRenderer
      */
     public function __invoke(ContainerInterface $sm)
     {
@@ -24,11 +26,11 @@ class BladeRendererFactory
         $container = new Container();
 
         $container->bind('files', function () {
-            return new Filesystem;
+            return new Filesystem();
         }, true);
 
         $container->bind('events', function () {
-            return new Dispatcher;
+            return new Dispatcher();
         }, true);
 
         $container->bindIf('config', function () use ($templates) {
@@ -37,7 +39,6 @@ class BladeRendererFactory
                 'view.compiled' => $templates['cache'],
             ];
         }, true);
-
 
         (new ViewServiceProvider($container))->register();
 

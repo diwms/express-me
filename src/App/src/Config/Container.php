@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Config;
@@ -17,8 +18,8 @@ class Container
      */
     public function __construct()
     {
-        $aggregator = new Aggregator;
-        $container  = new ServiceManager;
+        $aggregator = new Aggregator();
+        $container = new ServiceManager();
 
         (new Config($aggregator->getMergedConfig()['config']))->configureServiceManager($container);
 
