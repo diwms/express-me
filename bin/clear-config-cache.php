@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
-$config = require_once __DIR__ . '/../config/config.php';
+$config = require_once __DIR__.'/../config/config.php';
 
 if (!isset($config['config_cache_path'])) {
-    echo 'No configuration cache path found' . PHP_EOL;
+    echo 'No configuration cache path found'.PHP_EOL;
     exit(0);
 }
 
