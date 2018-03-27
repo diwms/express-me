@@ -18,7 +18,7 @@ class ConfigProvider
     {
         return [
             'invokables' => [Http\Handler\DummyHandler::class],
-            'factories'  => [],
+            'factories' => [],
         ];
     }
 
