@@ -1,0 +1,38 @@
+version: "3"
+services:
+  php-built-in-server:
+    build:
+      context: ./config/docker
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www
+    links:
+      - postgres
+      - redis
+  postgres:
+    image: postgres:10.3-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+    volumes:
+      - /tmp/postgres:/data/postgres
+    ports:
+      - 5432:5432
+    networks:
+      - postgres
+    restart: always
+  redis:
+    image: redis:4.0.9-alpine
+    ports:
+      - 6379:6379
+    restart: always
+    networks:
+      - redis
+networks:
+  postgres:
+    driver: bridge
+  redis:
+    driver: bridge
