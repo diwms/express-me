@@ -16,6 +16,10 @@
   </a>
   
   <a href="https://docs.zendframework.com/zend-expressive">
-    <img src="https://img.shields.io/badge/Powered_by-Zend_Expressive-green.svg?style=flat-square" alt="Engine" />
+    <img src="https://img.shields.io/badge/Powered_by-Zend_Expressive_3-green.svg?style=flat-square" alt="Engine" />
   </a>
 </p>
+
+---
+
+# WIP {{ WORK_IN_PROGRESS }}
