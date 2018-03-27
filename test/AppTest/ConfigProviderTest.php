@@ -2,7 +2,6 @@
 
 namespace AppTest;
 
-
 use App\ConfigProvider;
 use PHPUnit\Framework\TestCase;
 
