@@ -16,6 +16,15 @@
   </a>
   
   <a href="https://docs.zendframework.com/zend-expressive">
-    <img src="https://img.shields.io/badge/Powered_by-Zend_Expressive-green.svg?style=flat-square" alt="Engine" />
+    <img src="https://img.shields.io/badge/Powered_by-Zend_Expressive_3-green.svg?style=flat-square" alt="Engine" />
   </a>
 </p>
+
+---
+
+# WIP
+All code on this branch not in actual and stable things state.
+
+I've tried here some approaches and integrations.
+
+In the same time PSR-15 and Expressive 3 was't finalized and this branch contains a lot of unstable changes
