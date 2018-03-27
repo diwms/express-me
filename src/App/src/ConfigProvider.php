@@ -10,7 +10,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'templates'    => $this->getTemplates(),
+            'templates' => $this->getTemplates(),
         ];
     }
 
@@ -26,8 +26,8 @@ class ConfigProvider
     {
         return [
             'paths' => [
-                'error'   => [__DIR__ . '/../templates/error'],
-                'layout'   => [__DIR__ . '/../templates/layout'],
+                'error' => [__DIR__.'/../templates/error'],
+                'layout' => [__DIR__.'/../templates/layout'],
             ],
         ];
     }
