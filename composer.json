@@ -9,6 +9,7 @@
   "require": {
     "php": "^7.2",
     "doctrine/orm": "*",
+    "illuminate/view": "^5.6",
     "league/commonmark": "^0.17.2",
     "zendframework/zend-component-installer": "^2.1.1",
     "zendframework/zend-config-aggregator": "^1.0",
