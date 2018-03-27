@@ -97,6 +97,4 @@ class TagEntity
 
         return $this;
     }
-
-
 }
