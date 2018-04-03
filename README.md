@@ -22,4 +22,13 @@
 
 ---
 
-# WIP {{ WORK_IN_PROGRESS }}
+## WIP
+
+---
+
+#### Useful docker commands:
+Stop all running containers
+
+```bash
+docker stop $(docker ps -aq)
+```

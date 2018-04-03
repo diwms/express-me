@@ -1,6 +1,8 @@
 version: "3"
 services:
   php-built-in-server:
+    container_name: express-me-php
+    command: php -S 0.0.0.0:80 -t ./public
     build:
       context: ./config/docker
       dockerfile: Dockerfile
@@ -8,10 +10,18 @@ services:
       - 80:80
     volumes:
       - ./:/var/www
-    links:
-      - postgres
-      - redis
+#### PHP COMPOSER ####
+  composer:
+    container_name: php-composer
+    image: composer:1.6.3
+    restart: "no"
+    command: install
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+#### DATABASE ####
   postgres:
+    container_name: express-me-postgres
     image: postgres:10.3-alpine
     environment:
       POSTGRES_USER: postgres
@@ -21,18 +31,17 @@ services:
       - /tmp/postgres:/data/postgres
     ports:
       - 5432:5432
-    networks:
-      - postgres
     restart: always
+#### REDIS ####
   redis:
+    container_name: express-me-redis
     image: redis:4.0.9-alpine
     ports:
       - 6379:6379
     restart: always
-    networks:
-      - redis
-networks:
-  postgres:
-    driver: bridge
-  redis:
-    driver: bridge
+#### Mail UI ####
+  mailhog:
+    container_name: express-me-mailhog
+    image: mailhog/mailhog:latest
+    ports:
+      - 8081:8025

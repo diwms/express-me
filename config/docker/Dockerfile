@@ -1,14 +1,15 @@
-FROM php:7.2.3-cli-alpine
+FROM php:7.2.3-cli-alpine3.7
 
-RUN apk update && apk upgrade && apk add bash git
+ENV REDIS_HOST_VERSION 4.0.0
+ENV XDEBUG_VERSION 2.6.0
 
-# Install PHP extensions
-ADD install-php.sh /usr/sbin/install-php.sh
-RUN ["chmod", "+x", "/usr/sbin/install-php.sh"]
-RUN /usr/sbin/install-php.sh
+RUN apk add --no-cache $PHPIZE_DEPS postgresql-dev
+
+RUN pecl install redis-$REDIS_HOST_VERSION \
+&& pecl install xdebug-$XDEBUG_VERSION \
+&& docker-php-ext-install pdo pdo_pgsql \
+&& docker-php-ext-enable redis xdebug
 
 COPY xdebug.ini $PHP_INI_DIR/conf.d/
 
 WORKDIR /var/www
-CMD php -S 0.0.0.0:80 -t ./public
-EXPOSE 80
