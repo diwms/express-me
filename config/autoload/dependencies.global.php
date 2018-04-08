@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 return [
     'dependencies' => [
-        'aliases'    => [],
-        'invokables' => [],
-        'factories'  => [
-            Doctrine\ORM\EntityManager::class => App\Factory\DoctrineFactory::class,
+        'factories' => [
+            Doctrine\ORM\EntityManager::class  => Integration\Doctrine\Factory\DoctrineFactory::class,
+            Doctrine\Common\Cache\Cache::class => Integration\Doctrine\Factory\DoctrineRedisCacheFactory::class,
         ],
     ],
 ];

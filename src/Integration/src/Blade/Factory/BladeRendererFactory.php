@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\View;
+namespace Integration\Blade\Factory;
 
 use Illuminate\Container\Container;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\ViewServiceProvider;
+use Integration\Blade\BladeRenderer;
 use Psr\Container\ContainerInterface;
 
 class BladeRendererFactory
@@ -17,10 +18,9 @@ class BladeRendererFactory
      *
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
-     *
      * @return BladeRenderer
      */
-    public function __invoke(ContainerInterface $sm)
+    public function __invoke(ContainerInterface $sm): BladeRenderer
     {
         $templates = $sm->get('config')['templates'];
         $container = new Container();
@@ -40,10 +40,9 @@ class BladeRendererFactory
             ];
         }, true);
 
+        /** @var \Illuminate\Contracts\Foundation\Application $container */
         (new ViewServiceProvider($container))->register();
 
-        $blade = new BladeRenderer($container['view']);
-
-        return $blade;
+        return new BladeRenderer($container['view']);
     }
 }

@@ -1,19 +1,17 @@
 <?php
 
-namespace App\View;
+namespace Integration\Blade;
 
 use Zend\Expressive\Template\ArrayParametersTrait;
 use Zend\Expressive\Template\Exception;
 use Zend\Expressive\Template\TemplatePath;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-/**
- * Template implementation bridging illuminate/view.
- */
 class BladeRenderer implements TemplateRendererInterface
 {
     use ArrayParametersTrait;
 
+    /** @var \Illuminate\View\Factory */
     private $template;
 
     public function __construct($template)
@@ -22,10 +20,8 @@ class BladeRenderer implements TemplateRendererInterface
     }
 
     /**
-     * Render.
-     *
-     * @param string       $name
-     * @param array|object $params
+     * @param string $name
+     * @param array  $params
      *
      * @return string
      */

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fe105aa0fc2e6bfadaab5028b72e5aa",
+    "content-hash": "7c72b6f518da7b2e80f871e4a802bc01",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -989,6 +989,56 @@
             "time": "2018-03-24T14:44:34+00:00"
         },
         {
+            "name": "indigophp/doctrine-annotation-autoload",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/indigophp/doctrine-annotation-autoload.git",
+                "reference": "5c2018e7b1277f691600e69b4d3177b706e8aa80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/indigophp/doctrine-annotation-autoload/zipball/5c2018e7b1277f691600e69b4d3177b706e8aa80",
+                "reference": "5c2018e7b1277f691600e69b4d3177b706e8aa80",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "doctrine/annotations": "*",
+                "php": ">=5.4"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Indigo\\Composer\\DoctrineAnnotationAutoloadPlugin",
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Indigo\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "Hooks into Composer autoload generation and adds Doctrine annotation autoloading",
+            "homepage": "https://indigophp.com",
+            "keywords": [
+                "annotation",
+                "autoload",
+                "doctrine"
+            ],
+            "time": "2015-11-12T12:29:47+00:00"
+        },
+        {
             "name": "league/commonmark",
             "version": "0.17.5",
             "source": {
@@ -1455,6 +1505,45 @@
                 "simple-cache"
             ],
             "time": "2017-10-23T01:57:42+00:00"
+        },
+        {
+            "name": "rapidwebltd/array_undot",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rapidwebltd/array_undot.git",
+                "reference": "e27c69e1b49f6009e0efc677e61732bc4133b4d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rapidwebltd/array_undot/zipball/e27c69e1b49f6009e0efc677e61732bc4133b4d7",
+                "reference": "e27c69e1b49f6009e0efc677e61732bc4133b4d7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/array_undot.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Jordan Hall",
+                    "email": "jordan.hall@rapidweb.biz"
+                }
+            ],
+            "description": "array_undot (the opposite of the array_dot helper function) expands a dot notation array into a full multi-dimensional array.",
+            "time": "2018-01-24T15:12:55+00:00"
         },
         {
             "name": "symfony/console",
