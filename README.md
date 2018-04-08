@@ -24,6 +24,8 @@
 
 ## WIP
 
+This project is under heavy development, anything can be changed/removed/deleted.
+
 ---
 
 #### Useful docker commands:
