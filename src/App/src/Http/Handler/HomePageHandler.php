@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Handler;
 
-use App\Component\DoctrinePaginatorAdapter;
 use App\Entity\PostEntity;
 use Doctrine\ORM\EntityManager;
 use Psr\Http\Message\ResponseInterface;
@@ -12,6 +11,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrinePaginatorAdapter;
 use Doctrine\ORM\Tools\Pagination\Paginator as DoctrinePaginator;
 use Zend\Paginator\Paginator;
 
