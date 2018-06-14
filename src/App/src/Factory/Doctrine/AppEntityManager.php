@@ -1,6 +1,6 @@
 <?php
 
-namespace Integration\Doctrine\Factory;
+namespace App\Factory\Doctrine;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Cache\Cache;
@@ -10,24 +10,14 @@ use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Mapping\UnderscoreNamingStrategy;
 use Psr\Container\ContainerInterface;
 
-class DoctrineFactory
+class AppEntityManager
 {
-    /**
-     * @param ContainerInterface $container
-     *
-     * @return EntityManager
-     * @throws \Doctrine\Common\Annotations\AnnotationException
-     * @throws \Doctrine\ORM\ORMException
-     * @throws \Psr\Container\ContainerExceptionInterface
-     * @throws \Psr\Container\NotFoundExceptionInterface
-     */
     public function __invoke(ContainerInterface $container): EntityManager
     {
-        $config                   = $container->get('config')['doctrine'];
-        $configuration            = $config['configuration'];
+        $config = $container->get('config')['doctrine'];
+        $configuration = $config['configuration'];
         $autoGenerateProxyClasses = $configuration['auto_generate_proxy_classes'] ?? false;
 
-        // Doctrine ORM
         $doctrine = new Configuration();
         $doctrine->setProxyDir($configuration['proxy_dir']);
         $doctrine->setProxyNamespace($configuration['proxy_namespace']);

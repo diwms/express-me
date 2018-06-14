@@ -1,20 +1,17 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Integration\Doctrine\Factory;
+namespace App\Factory\Doctrine;
 
 use Doctrine\Common\Cache\RedisCache;
 use Interop\Container\ContainerInterface;
-use Redis;
 
-class DoctrineRedisCacheFactory
+class AppRedisCache
 {
     public function __invoke(ContainerInterface $container): RedisCache
     {
         $config = $container->get('config')['doctrine']['driver']['annotations'];
 
-        $redis = new Redis;
+        $redis = new \Redis;
         $redis->connect($config['cache']['redis']['host']);
 
         $cache = new RedisCache;

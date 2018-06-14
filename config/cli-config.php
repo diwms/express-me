@@ -1,11 +1,10 @@
 <?php
 
-declare(strict_types=1);
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 
-require_once __DIR__ . '/../vendor/autoload.php';
 $container = require_once __DIR__ . '/../config/container.php';
 
 /** @var \Doctrine\ORM\EntityManager $em */

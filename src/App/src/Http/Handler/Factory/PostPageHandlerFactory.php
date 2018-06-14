@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Handler\Factory;
 
 use App\Http\Handler\PostPageHandler;

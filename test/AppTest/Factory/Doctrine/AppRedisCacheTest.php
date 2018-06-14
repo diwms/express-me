@@ -1,22 +1,19 @@
 <?php
 
-declare(strict_types=1);
-
 namespace IntegrationTest\Doctrine\Factory;
 
+use App\Factory\Doctrine\AppRedisCache;
 use Doctrine\Common\Cache\RedisCache;
-use Integration\Doctrine\Factory\DoctrineRedisCacheFactory;
 use PHPUnit\Framework\TestCase;
 use Zend\ServiceManager\ServiceManager;
 
-class DoctrineRedisCacheFactoryTest extends TestCase
+class AppRedisCacheTest extends TestCase
 {
-    /** @var array */
     private $configuration;
 
-    public function setUp(): void
+    protected function setUp()
     {
-        $this->configuration = array_undot(['doctrine.driver.annotations.cache.redis.host' => 'localhost']);
+        $this->configuration = array_undot(['doctrine.driver.annotations.cache.redis.host' => '127.0.0.1']);
     }
 
     public function testFactoryInvocation(): void
@@ -24,9 +21,9 @@ class DoctrineRedisCacheFactoryTest extends TestCase
         $container = new ServiceManager;
         $container->setService('config', $this->configuration);
 
-        $factory = new DoctrineRedisCacheFactory;
+        $factory = new AppRedisCache();
 
-        $this->assertInstanceOf(DoctrineRedisCacheFactory::class, $factory);
+        $this->assertInstanceOf(AppRedisCache::class, $factory);
         $this->assertInstanceOf(RedisCache::class, $factory($container));
     }
 }

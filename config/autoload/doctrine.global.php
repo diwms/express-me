@@ -6,7 +6,7 @@ return [
             'orm_default' => [
                 'params' => [
                     'driverClass' => Doctrine\DBAL\Driver\PDOPgSql\Driver::class,
-                    'host'        => 'localhost',
+                    'host'        => '127.0.0.1',
                     'port'        => '5432',
                     'dbname'      => 'blog',
                     'user'        => 'postgres',
@@ -20,7 +20,7 @@ return [
             'annotations' => [
                 'cache' => [
                     'redis' => [
-                        'host' => 'localhost',
+                        'host' => '127.0.0.1',
                     ],
                 ],
                 'paths' => [

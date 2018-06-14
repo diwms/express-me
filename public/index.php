@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 if (PHP_SAPI === 'cli-server' && __FILE__ !== $_SERVER['SCRIPT_FILENAME']) {
     return false;
 }
@@ -12,7 +10,6 @@ require_once __DIR__.'/../vendor/autoload.php';
     /** @var \Psr\Container\ContainerInterface $container */
     $container = require_once __DIR__.'/../config/container.php';
 
-    //var_dump($container);exit;
     /** @var \Zend\Expressive\Application $app */
     $app = $container->get(\Zend\Expressive\Application::class);
     $factory = $container->get(\Zend\Expressive\MiddlewareFactory::class);

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use Zend\ServiceManager\ServiceManager;
 
 $config = require_once __DIR__.'/config.php';

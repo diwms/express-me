@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 return [
     \Zend\ConfigAggregator\ConfigAggregator::ENABLE_CACHE => true,
     'debug' => false,

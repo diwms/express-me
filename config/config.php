@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use Zend\ConfigAggregator\ArrayProvider;
 use Zend\ConfigAggregator\ConfigAggregator;
 use Zend\ConfigAggregator\PhpFileProvider;
