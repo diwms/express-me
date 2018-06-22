@@ -1,37 +1,32 @@
-<p align="center">
-    <img title="logo" src="https://user-images.githubusercontent.com/968394/34780020-9fbfc4cc-f62a-11e7-9115-5356273a8358.png" />
-</p>
+![](https://https://user-images.githubusercontent.com/968394/34780020-9fbfc4cc-f62a-11e7-9115-5356273a8358.png)
 
-<p align="center">
-  <a href="https://travis-ci.org/diwms/express-me">
-      <img src="https://img.shields.io/travis/diwms/express-me.svg?style=flat-square" alt="Travis" />
-  </a> 
-  
-  <a href="https://coveralls.io/github/diwms/express-me?branch=master">
-      <img src="https://img.shields.io/coveralls/github/diwms/express-me/master.svg?style=flat-square" alt="Coveralls" />
-  </a> 
+---
 
-  <a href="https://styleci.io/repos/115021665">
-    <img src="https://styleci.io/repos/115021665/shield" alt="StyleCI" />
-  </a>
-  
-  <a href="https://docs.zendframework.com/zend-expressive">
-    <img src="https://img.shields.io/badge/Powered_by-Zend_Expressive_3-green.svg?style=flat-square" alt="Engine" />
-  </a>
-</p>
+![](https://img.shields.io/badge/Powered_by-Zend_Expressive_3-green.svg?style=flat-square)
 
 ---
 
 ## WIP
 
-This project is under heavy development, anything can be changed/removed/deleted.
+This project is under heavy development, anything can be changed.
 
 ---
 
 ## Useful docker commands
 
-Stop all running containers
+- Stop all running containers
 
 ```bash
 docker stop $(docker ps -aq)
+```
+- Go to container 
+
+```bash
+docker exec -i -t 665b4a1e17b6 /bin/bash #hash
+```
+
+- List of all running containers
+
+```bash
+docker ps
 ```
